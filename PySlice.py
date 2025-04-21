@@ -9,9 +9,9 @@ SUPPORTED_EXTENSIONS = ('.wav', '.mp3', '.flac', '.ogg', '.m4a')
 def split_audio_on_silence(
     input_file,
     output_folder,
-    min_silence_len=100,
-    silence_thresh_db=-55,
-    keep_silence=5
+    min_silence_len=1000,
+    silence_thresh_db=-40,
+    keep_silence=300
 ):
     audio = AudioSegment.from_file(input_file)
     chunks = split_on_silence(
